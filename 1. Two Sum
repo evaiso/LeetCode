@@ -1,0 +1,31 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        sum = 0
+        new_nums = []
+        for i in nums:
+            sum = i
+            for i in nums:
+                if i + i != target:
+                    if sum + i == target:
+                        new_nums.append(nums.index(i))
+                else:
+                    b = nums.index(i) + 1
+                    for i in nums[b:]:
+                        sum = i
+                        if sum + i == target:
+                            new_nums.append(nums.index(i))
+                            nums.remove(i)
+                            new_nums.append(nums.index(i))
+                            new_nums[1]=new_nums[1]+1
+                        else:
+                            for i in nums:
+                                sum = i
+                                for i in nums:
+                                    if i + i != target:
+                                        if sum + i == target:
+                                            new_nums.append(nums.index(i))
+                    break
+        new_nums = set(new_nums)
+        new_nums = list(new_nums)
+        new_nums.sort()
+        return(new_nums)
