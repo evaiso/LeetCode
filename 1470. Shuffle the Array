@@ -1,0 +1,7 @@
+class Solution(object):
+    def shuffle(self, nums, n):
+        f = []
+        for i in range(n):
+            f.append(nums[i])
+            f.append(nums[n+i])
+        return(f)
