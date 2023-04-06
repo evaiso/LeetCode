@@ -1,0 +1,13 @@
+import random
+class Solution(object):
+    def sumZero(self, n):
+        """
+        :type n: int
+        :rtype: List[int]
+        """
+        nums = [random.randint(-n + 1, n + 1) for i in range(n)]
+        nums1 = set(nums)
+        while sum(nums) != 0 or len(nums) != len(nums1):
+            nums = [random.randint(-n + 1, n + 1) for i in range(n)]
+            nums1 = set(nums)
+        return nums
