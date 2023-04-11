@@ -1,0 +1,7 @@
+def new_dict(var):
+    var1 = []
+    for el in var:
+        if el not in var1:
+            var1.append(el)
+    var = var1
+    return var
