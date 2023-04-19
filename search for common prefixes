@@ -1,0 +1,38 @@
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        if len(set(strs)) == 1:
+            return((''.join(strs[0])))
+        else:
+            strs1 = []
+            strs2 = []
+            summ = 0
+            q = ''
+            g = ''
+            for i in strs:
+                i = list(i)
+                strs1.append(i)
+            for i in range(len(strs1)):
+                for i in strs1[i]:
+                    while i != 'a' and i != 'e' and i != 'i' and i != 'o' and i != 'u' and i != 'y':
+                        strs2.append(i)
+                        summ += 1
+                        break
+                    else:
+                        break
+            for i in range(len(strs1)):
+                for i in strs1[i]:
+                    while i != 'b' and i != 'c' and i != 'd' and i != 'f' and i != 'g' and i != 'h' and i != 'j' and i != 'k' and i != 'l' and i != 'm' and i != 'n' and i != 'p' and i != 'q' and i != 'r' and i != 's' and i != 't' and i != 'v' and i != 'w' and i != 'x' and i != 'z':
+                        strs2.append(i)
+                        summ += 1
+                        break
+                    else:
+                        break
+            summ = summ//len(strs)
+            for i in range(summ):
+                q += str(strs2[i])
+            for i in strs2[summ:summ+summ]:
+                g += str(i)
+            if q == g:
+                return(q)
+            else:
+                return("")
